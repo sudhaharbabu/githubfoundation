@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- script: echo "Pipeline triggered successfully!"
+  displayName: "Verify pipeline"
+
+- script: |
+    echo "Running build tasks..."
+    # Add your build commands here
+  displayName: "Build"
+
+- script: |
+    echo "Running tests..."
+    # Add your test commands here
+  displayName: "Test"
